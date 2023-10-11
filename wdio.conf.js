@@ -126,9 +126,9 @@ export const config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec', ['allure', {
-        outputDir: 'allure-results',
+        outputDir: 'allure/allure-results',
         disableWebdriverStepsReporting: true,
-        disableWebdriverScreenshotsReporting: true,
+        disableWebdriverScreenshotsReporting: false,
     }]],
 
 
@@ -289,7 +289,7 @@ export const config = {
      */
     onComplete: function (exitCode, config, capabilities, results) {
         const reportError = new Error('Could not generate Allure report')
-        const generation = allure(['generate', 'allure-results', '--clean'])
+        const generation = allure(['generate', 'allure/allure-results', '--clean'])
         return new Promise((resolve, reject) => {
             const generationTimeout = setTimeout(
                 () => reject(reportError),
