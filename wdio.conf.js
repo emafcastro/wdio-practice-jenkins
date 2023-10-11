@@ -52,12 +52,17 @@ export const config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: 'MicrosoftEdge',
-        'ms:edgeOptions': {
-            args: ['--no-sandbox', '--disable-dev-shm-usage']
-        }
-    }],
+    capabilities: [
+        {
+            browserName: 'chrome',
+        }, {
+            browserName: 'firefox',
+        }, {
+            browserName: 'MicrosoftEdge',
+            'ms:edgeOptions': {
+                args: ['--no-sandbox', '--disable-dev-shm-usage']
+            }
+        }],
 
     //
     // ===================
